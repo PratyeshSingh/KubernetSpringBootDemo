@@ -35,6 +35,7 @@ alias kubectl="minikube kubectl --"
 minikube dashboard
 minikube stop
 
+#### info :- SPACE at end and (.) for current directory need to add otherwise provide the file directory instead
 docker build -t springboot-kubernet-demo:1.0 .
 
 docker images
