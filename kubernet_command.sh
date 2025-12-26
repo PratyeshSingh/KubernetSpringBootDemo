@@ -36,15 +36,26 @@ minikube dashboard
 minikube stop
 
 #### info :- SPACE at end and (.) for current directory need to add otherwise provide the file directory instead
+#docker build -t springboot-kubernet-demo:latest .
 docker build -t springboot-kubernet-demo:1.0 .
 
+
+#docker push springboot-kubernet-demo:latest .
+docker push springboot-kubernet-demo:1.0 .
+
 docker images
+
+# if yml/yaml file configuration are available else use ( kubectl create ) command below
+kubectl apply -f youFilename.yml
+
+#kubectl create deployment springboot-kubernet-demo --image=springboot-kubernet-demo:latest --port=8080
 kubectl create deployment springboot-kubernet-demo --image=springboot-kubernet-demo:1.0 --port=8080
 
 ### in case of failing in deployment
 - kubectl delete deployment springboot-kubernet-demo
 - kubectl get deployment springboot-kubernet-demo
 
+#minikube image load springboot-kubernet-demo:latest
 minikube image load springboot-kubernet-demo:1.0
 
 kubectl get deployment springboot-kubernet-demo
