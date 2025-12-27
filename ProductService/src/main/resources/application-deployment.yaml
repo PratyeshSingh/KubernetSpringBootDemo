@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-provider-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-provider
+  template:
+    metadata:
+      labels:
+        app: product-provider
+    spec:
+      containers:
+        - name: product-provider
+          image: pratyesh3/product-provider:latest
+          ports:
+            - containerPort: 8080
