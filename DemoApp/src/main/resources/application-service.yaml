@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: springboot-kubernet-demo-service
+  name: demo-app-service
 spec:
   selector:
-    app: springboot-kubernet-demo
+    app: demo-app
   ports:
     - protocol: TCP
       port: 8080
