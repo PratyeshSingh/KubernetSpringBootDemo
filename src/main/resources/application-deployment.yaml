@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-kubernet-demo-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-kubernet-demo
+  template:
+    metadata:
+      labels:
+        app: springboot-kubernet-demo
+    spec:
+      containers:
+        - name: springboot-kubernet-demo
+          image: pratyesh3/springboot-kubernet-demo:latest
+          ports:
+            - containerPort: 8080
